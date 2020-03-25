@@ -9,13 +9,16 @@
     <div id="root"></div>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script>
-        const Title = React.createElement('div', {
-            className: 'title'
-        }, 'React tutorials');
-        const Image = React.createElement('img', {
-            src: 'https://loremflickr.com/320/240'
-        });
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // const Title = React.createElement('div', {
+        //     className: 'title'
+        // }, 'React tutorials');
+        const Title = <div className='title'>React tutorials</div>;
+        // const Image = React.createElement('img', {
+        //     src: 'https://loremflickr.com/320/240'
+        // });
+        const Image = <img src='https://loremflickr.com/320/240'/>
         // React.createElement(HTMLElement, props(property)(obj), children(content);
         const App = React.createElement('div', null, Title, Image);
         const Hello = React.createElement('div', null, 'Hello World');
