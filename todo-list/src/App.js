@@ -11,17 +11,39 @@ class App extends Component {
     ];
   }
   render() {
+    // Conditional rendering
+    // if(this.todoItems.length > 0){
+    //   return (
+    //     <div className="App">
+    //       {
+    //         this.todoItems.map((item, index) =>
+    //           <TodoItem key={index} item={item} /> ,{/* truyền props vào conponents TodoItem */}
+    //         )
+    //       }
+    //     </div>
+    //   );
+    // } else {
+    //   return (
+    //     <div className="App">Nothing here</div>
+    //   );
+    // }
     return (
       <div className="App">
         {
-          this.todoItems.map((item, index) =>
-            <TodoItem key={index} item={item} /> ,{/* truyền props vào conponents TodoItem */}
-          )
+          this.todoItems.length > 0 && this.todoItems.map((item, index) =>
+            <TodoItem key={index} item={item} />, {/* truyền props vào conponents TodoItem */ }
+          ) 
         }
+        {
+          this.todoItems.length === 0 && 'Nothing here'
+        }
+        {/* conditional 1 && conditional 2 
+          neu conditional 1 la truthy thi tra ve gia tri conditional 2
+          hoac conditional 1 falsy thi tra ve conditional 1
+        */}
       </div>
     );
   }
-
 }
 
 export default App;
