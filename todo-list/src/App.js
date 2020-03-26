@@ -3,7 +3,7 @@ import './App.css';
 import TodoItem from './components/TodoItem';
 class App extends Component {
   constructor() {
-    super(); // đại diện cho constructor của class Component
+    super(); // đại diện cho constructor của class
     this.todoItems = [
       { title: 'Mua bim bim', isComplete: true },
       { title: 'Đi đá bóng' },
