@@ -14,10 +14,11 @@ class TodoItem extends Component {
         //     </div>
         // ); 
         const { item } = this.props; 
-        let className = classNames('TodoItem',
-                                  { 'TodoItem-complete': item.isComplete === true });
+       
         return (
-            <div className={className}>
+            <div className={classNames('TodoItem',{ 
+                'TodoItem-complete': item.isComplete === true 
+            })}>
                 <p>{this.props.item.title}</p>
             </div>
         );
