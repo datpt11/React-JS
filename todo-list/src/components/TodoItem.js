@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import './TodoItem.css';
 class TodoItem extends Component {
+    // constructor(props){
+    //     super(props);
+    //     this.onItemClick = this.onItemClick.bind(this);
+    // }
+    
     render() {
         // const { item } = this.props; //destructuring, this.props la object
         // let className = 'TodoItem';
@@ -13,10 +18,10 @@ class TodoItem extends Component {
         //         <p>{this.props.item.title}</p>
         //     </div>
         // ); 
-        const { item } = this.props; 
+        const { item, onClick } = this.props; 
        
         return (
-            <div className={classNames('TodoItem',{ 
+            <div onClick={onClick} className={classNames('TodoItem',{ 
                 'TodoItem-complete': item.isComplete === true 
             })}>
                 <p>{this.props.item.title}</p>
