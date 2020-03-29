@@ -66,7 +66,7 @@ class App extends Component {
       return (
         <div className="App">
           <div className="Header">
-            <img src={tick} width={32} height="32" />
+            <img src={tick} alt="" width={32} height="32" />
             <input onChange={this.onChange} value={newItem} type="text" placeholder="Add a new item" onKeyUp={this.onKeyUp} />
           </div>
           {
