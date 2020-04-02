@@ -32,12 +32,13 @@ class Counter extends Component {
         console.log('Counter did mount');
     }// duoc goi 1 lan (dau tien) khi ma Component duoc khoi tao va gan vao DOM
     componentDidUpdate() {
-        console.log('Counter dit update');
-    }// duoc goi ngay sau khi render dc goi
+        console.log('Counter did update');
+    }// duoc goi ngay sau khi render dc goi (props, state)
     componentWillUnmount() {
         console.log('Counter will unmount');
     }// goi truoc khi component unmout
     shouldComponentUpdate(nextProps, nextState) {
+        // console.log(nextState);
         if(this.state.count === nextState.count) {
             return false; // khong render lai
         }
