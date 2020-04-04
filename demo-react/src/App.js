@@ -1,10 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import TopMenu from './components/TopMenu';
 import Products from './pages/Products';
