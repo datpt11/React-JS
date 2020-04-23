@@ -7,27 +7,28 @@ import {
 import TopMenu from './components/TopMenu';
 import Products from './pages/Products';
 import './App.css';
+import CardProvider from './provider/CardProvider';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <TopMenu />
-        <Switch>
-          <Route path="/products/" exact>
-            <Products />
-          </Route>
-          <Route path="/contact/" exact>
-            <Contact />
-          </Route>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-
-
+    <CardProvider>
+      <Router>
+        <div className="App">
+          <TopMenu />
+          <Switch>
+            <Route path="/products/" exact>
+              <Products />
+            </Route>
+            <Route path="/contact/" exact>
+              <Contact />
+            </Route>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </CardProvider>
   );
 }
 

@@ -4,6 +4,7 @@ import {
     CardTitle, Button
 } from 'reactstrap';
 import './Products.css';
+import CardContext from '../contexts/CardContext';
 class CardItem extends Component {
     render() {
         const { product } = this.props;
@@ -16,7 +17,11 @@ class CardItem extends Component {
                 <CardBody>
                     <CardTitle className="text1line">{product.name}</CardTitle>
                     <CardText className="text2line">{product.description}</CardText>
-                    <Button>Add to cart</Button>
+                    <CardContext.Consumer>
+                        {({ addToCard }) =>
+                            <Button onClick={() => addToCard(product)}>Add to cart</Button>
+                        }
+                    </CardContext.Consumer>
                 </CardBody>
             </Card>
         );

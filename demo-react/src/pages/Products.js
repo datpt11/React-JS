@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import PaginationProduct from './PaginationProduct';
 import {
     Container, Row, Col
 } from 'reactstrap';
@@ -26,9 +25,9 @@ class Products extends Component {
             <Container>
                 <Row>
                     {
-                        products.map((product) => (
+                        products.map((product, i) => (
                             <Col sm="4">
-                                <CardItem product={product} />
+                                <CardItem key={i} product={product} />
                             </Col>
                         ))
                     }

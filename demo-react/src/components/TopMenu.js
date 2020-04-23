@@ -10,6 +10,7 @@ import {
     NavbarText
 } from 'reactstrap';
 import { Link } from "react-router-dom";
+import CardContext from '../contexts/CardContext';
 const TopMenu = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -29,6 +30,14 @@ const TopMenu = (props) => {
                         </NavItem>
                         <NavLink>
                             <Link to="/products/">Products</Link>
+                        </NavLink>
+                        <NavLink>
+                            <CardContext.Consumer>
+                                {({card}) => 
+                                    <Link to="/card/">Card ( {card.length} )</Link>
+                                }
+
+                            </CardContext.Consumer>
                         </NavLink>
                     </Nav>
                     <NavbarText>Simple Text</NavbarText>
